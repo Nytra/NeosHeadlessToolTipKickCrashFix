@@ -15,9 +15,16 @@ namespace HeadlessToolTipKickCrashFix
         public override void OnEngineInit()
         {
             Harmony harmony = new Harmony($"owo.{Author}.{Name}");
-            MethodInfo originalMethod = AccessTools.DeclaredMethod(typeof(CommonTool), "TooltipDequipped", new Type[] { typeof(IToolTip), typeof(bool) });
-            MethodInfo replacementMethod = AccessTools.DeclaredMethod(typeof(HeadlessToolTipKickCrashFix), nameof(CommonTool_TooltipDequipped_Prefix));
-            harmony.Patch(originalMethod, prefix: new HarmonyMethod(replacementMethod));
+
+            // Check if we are loaded by a headless client
+            // (Thanks to HeadlessTweaks for this next line)
+            Type neosHeadless = AccessTools.TypeByName("NeosHeadless.Program");
+            if ( neosHeadless != null )
+            {
+                MethodInfo originalMethod = AccessTools.DeclaredMethod(typeof(CommonTool), "TooltipDequipped", new Type[] { typeof(IToolTip), typeof(bool) });
+                MethodInfo replacementMethod = AccessTools.DeclaredMethod(typeof(HeadlessToolTipKickCrashFix), nameof(CommonTool_TooltipDequipped_Prefix));
+                harmony.Patch(originalMethod, prefix: new HarmonyMethod(replacementMethod));
+            }
         }
 
         public static bool CommonTool_TooltipDequipped_Prefix(IToolTip tooltip, ref bool popOff)
