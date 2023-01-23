@@ -4,7 +4,7 @@ using NeosModLoader;
 using System.Reflection;
 using System;
 
-namespace ModNameGoesHere
+namespace HeadlessToolTipKickCrashFix
 {
     public class HeadlessToolTipKickCrashFix : NeosMod
     {
