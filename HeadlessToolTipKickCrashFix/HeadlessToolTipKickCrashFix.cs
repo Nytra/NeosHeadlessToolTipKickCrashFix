@@ -19,7 +19,7 @@ namespace HeadlessToolTipKickCrashFix
             // Check if we are loaded by a headless client
             // (Thanks to HeadlessTweaks for this next line)
             Type neosHeadless = AccessTools.TypeByName("NeosHeadless.Program");
-            if ( neosHeadless != null )
+            if (neosHeadless != null)
             {
                 MethodInfo originalMethod = AccessTools.DeclaredMethod(typeof(CommonTool), "TooltipDequipped", new Type[] { typeof(IToolTip), typeof(bool) });
                 MethodInfo replacementMethod = AccessTools.DeclaredMethod(typeof(HeadlessToolTipKickCrashFix), nameof(CommonTool_TooltipDequipped_Prefix));
