@@ -1,6 +1,6 @@
 # HeadlessToolTipKickCrashFix
 
-A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that prevents tooltip permission kicks from crashing the headless.
+A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos](https://neos.com/) Headless Client that prevents tooltip permission kicks from causing a world crash.
 
 ## Installation
 1. Install [NeosModLoader](https://github.com/zkxs/NeosModLoader).
