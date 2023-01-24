@@ -10,7 +10,7 @@ namespace HeadlessToolTipKickCrashFix
     {
         public override string Name => "HeadlessToolTipKickCrashFix";
         public override string Author => "Nytra";
-        public override string Version => "1.0.0";
+        public override string Version => "1.0.1";
         public override string Link => "https://github.com/Nytra/NeosHeadlessToolTipKickCrashFix";
         public override void OnEngineInit()
         {
